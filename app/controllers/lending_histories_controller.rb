@@ -1,0 +1,2 @@
+class LendingHistoriesController < ApplicationController
+end
