@@ -4,22 +4,23 @@
 <p><strong>Status:</strong> <%= @book.status %></p>
 
 <h2>Borrowing History</h2>
-<ul>
-  <% @book.lending_histories.each do |history| %>
-    <li>
-      <%= history.borrower_name %> borrowed on <%= history.borrowed_at %> and returned on <%= history.returned_at || 'not yet returned' %>.
-    </li>
-  <% end %>
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Borrower</th>
+      <th>Borrowed At</th>
+      <th>Returned At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @book.lending_histories.each do |history| %>
+      <tr>
+        <td><%= history.borrower_name %></td>
+        <td><%= history.borrowed_at.strftime("%Y-%m-%d %H:%M") if history.borrowed_at %></td>
+        <td><%= history.returned_at ? history.returned_at.strftime("%Y-%m-%d %H:%M") : "Not Returned" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= form_with url: borrow_book_path(@book), method: :post do |form| %>
-  <%= form.label :borrower_name, 'Borrower Name' %>
-  <%= form.text_field :borrower_name %>
-  <%= form.submit 'Borrow' %>
-<% end %>
-
-<%= form_with url: return_book_path(@book), method: :post do |form| %>
-  <%= form.submit 'Return' %>
-<% end %>
-
-<%= link_to 'Back', books_path %>
+<%= link_to 'Back to Books', books_path, class: "btn btn-secondary" %>
