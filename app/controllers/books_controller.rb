@@ -1,11 +1,13 @@
+
 class BooksController < ApplicationController
-    before_action :set_book, only: [:show, :edit, :update, :destroy]
+    before_action :set_book, only: [:show, :edit, :update, :destroy, :return]
   
     def index
       @books = Book.all
     end
   
     def show
+      @lending_histories = @book.lending_histories.order(borrowed_at: :desc)
     end
   
     def new
@@ -35,6 +37,15 @@ class BooksController < ApplicationController
     def destroy
       @book.destroy
       redirect_to books_path, notice: "Book deleted!"
+    end
+  
+    def return
+      @book.update(status: 'available')
+      lending_history = @book.lending_histories.where(returned_at: nil).last
+      if lending_history
+        lending_history.update(returned_at: Time.now)
+      end
+      redirect_to books_path, notice: 'Book successfully returned!'
     end
   
     private

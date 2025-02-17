@@ -1,10 +1,200 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container for centering content */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header Section */
+  h1 {
+    text-align: center;
+    color: #7C444F;
+    margin-top: 50px;
+    font-size: 36px;
+  }
+  
+  /* Book Table Styling */
+  table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #7C444F;
+    color: white;
+    font-size: 16px;
+  }
+  
+  table td {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  table .btn {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  table .btn-warning {
+    background-color: #F39E60;
+    color: white;
+  }
+  
+  table .btn-danger {
+    background-color: #9F5255;
+    color: white;
+  }
+  
+  table .btn-success {
+    background-color: #E16A54;
+    color: white;
+  }
+  
+  table .btn-info {
+    background-color: #7C444F;
+    color: white;
+  }
+  
+  /* New Book Form Styling */
+  .form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    color: #7C444F;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: #E16A54;
+  }
+  
+  textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #7C444F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #9F5255;
+  }
+  
+  /* Add New Book Link */
+  .add-book-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+  }
+  
+  .add-book-link a {
+    color: #7C444F;
+    font-weight: bold;
+  }
+  
+  .add-book-link a:hover {
+    color: #9F5255;
+  }
+  
+  /* Borrow/Return Buttons */
+  .borrow-return-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .borrow-return-buttons .btn {
+    width: 48%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .borrow-return-buttons .btn-success {
+    background-color: #E16A54;
+    color: white;
+  }
+  
+  .borrow-return-buttons .btn-info {
+    background-color: #7C444F;
+    color: white;
+  }
+  
+  .borrow-return-buttons .btn-info:hover,
+  .borrow-return-buttons .btn-success:hover {
+    background-color: #9F5255;
+  }
+  
+  /* Alert Messages */
+  .notice {
+    padding: 10px;
+    background-color: #F39E60;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Links (for borrow history) */
+  .book-link {
+    color: #7C444F;
+    font-weight: bold;
+  }
+  
+  .book-link:hover {
+    color: #9F5255;
+  }
+  

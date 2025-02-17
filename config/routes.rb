@@ -1,10 +1,10 @@
+
 Rails.application.routes.draw do
   resources :books do
+    resources :lending_histories, only: [:new, :create]
     member do
-      post 'borrow'
-      post 'return'
+      patch 'return', to: 'books#return'
     end
   end
-
-  root 'books#index'
+  root "books#index"
 end
